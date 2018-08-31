@@ -28,21 +28,25 @@ public class ${className?cap_first}DaoImpl implements ${className?cap_first}Dao 
 		return sqlStr;
 	}
 	
+	@Override
 	public List<Object> select(${className?cap_first} ${className}){
 		String sql = this.getStatementId(${className?cap_first}.class, SELECT);
 		return sqlSession.selectList(sql, ${className});
 	}
 
+	@Override
 	public int insert(${className?cap_first} ${className}){
 		String sql = this.getStatementId(${className?cap_first}.class, INSERT);
 		return this.sqlSession.insert(sql, ${className});
 	}
 	
+	@Override
 	public int update(${className?cap_first} ${className}){
 		String sql = this.getStatementId(${className?cap_first}.class, UPDATE);
 		return this.sqlSession.update(sql, ${className});
 	}
 	
+	@Override
 	public int delete(${className?cap_first} ${className}){
 		String sql = this.getStatementId(${className?cap_first}.class, DELETE);
 		return sqlSession.delete(sql, ${className});
